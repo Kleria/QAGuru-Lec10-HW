@@ -22,7 +22,7 @@ public class ChloeTingTests{
     )
     @ParameterizedTest(name = "Training set {0} contains blocks with video")
     @Tag("Blocker")
-    void chloeTingTrainingSetsCointainVideos(String trainingSetName) {
+    void chloeTingTrainingSetsCointainVideosTest(String trainingSetName) {
         open("https://chloeting.com/");
         $(byText(trainingSetName)).click();
         $$(".dVbrf").shouldHave(CollectionCondition.sizeGreaterThan(1));
@@ -30,7 +30,7 @@ public class ChloeTingTests{
     @Disabled
     @Test
     @DisplayName("Main page has SignIn button")
-    void successfulSearchJUnitTest() {
+    void SignInButtonTest() {
         open("https://chloeting.com/");
         $("header").shouldHave(text("Sign Up"));
     }
