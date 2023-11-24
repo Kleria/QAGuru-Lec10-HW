@@ -2,8 +2,8 @@ package data;
 
 
 public enum Lang {
-    English("Welcome to Wikipedia"),
-    Italiano("Benvenuti su Wikipedia");
+    ENGLISH("Welcome to Wikipedia"),
+    ITALIANO("Benvenuti su Wikipedia");
 
     public final String description;
 

@@ -11,15 +11,15 @@ import static com.codeborne.selenide.Selenide.*;
 @Tag("Web")
 public class WikipediaTest {
     @BeforeAll
-    void beforeAll() {
+    static void beforeAll() {
         Configuration.pageLoadStrategy = "eager";
     }
     @EnumSource(Lang.class)
     @ParameterizedTest
-    void mainPageHasCorrectWelcomeInscription() {
+    void mainPageHasCorrectWelcomeInscription(Lang lang) {
         open("https://wikipedia.org");
-        $$(".central-featured-lang a").find(text(Lang.name)).click();
-        $("#main-page-header-title").shouldHave(text(Lang.description));
+        $$(".central-featured-lang a").find(text(lang.name())).click();
+        $("#mw-content-text").shouldHave(text(lang.description));
 
 
     }
